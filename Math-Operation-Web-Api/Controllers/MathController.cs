@@ -11,34 +11,42 @@ namespace Math_Operation_Web_Api.Controllers
     [ApiController]
     public class MathController : ControllerBase
     {
-        //the
+        //Addition method
         [HttpGet]
         public double Addition(int lValue, int rValue)
         {
             return lValue + rValue;
         }
 
+        //subtraction method
         [HttpGet]
         public double Subtraction(int lValue, int rValue)
         {
             return lValue - rValue;
         }
 
+        //multiplication method
         [HttpGet]
         public double Multiplication(int lValue, int rValue)
         {
             return lValue * rValue;
         }
 
+        //division method 
         [HttpGet]
         public double Division(int lValue, int rValue)
         {
+
+            //checking if any value is 0 
             if (lValue == 0 || rValue == 0)
             {
+                //if yes then throw exception
                 throw new ArgumentException("Cannot Divide By 0");
             }
             else
             {
+
+                //else divide the value and return 
                 return lValue / rValue;
 
             }
